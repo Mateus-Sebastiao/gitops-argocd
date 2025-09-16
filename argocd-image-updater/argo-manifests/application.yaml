@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask_hello-world
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: flask_hello-world=docker.io/mateussebastiao/flask_hello-world
+    argocd-image-updater.argoproj.io/flask_hello-world.update-strategy: latest
+    argocd-image-updater.argoproj.io/flask_hello-world.write-back-method: git:values
+    argocd-image-updater.argoproj.io/flask_hello-world.helm.image-name: image.repository
+    argocd-image-updater.argoproj.io/flask_hello-world.helm.image-tag: image.tag
+    argocd-image-updater.argoproj.io/git-branch: main
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Mateus-Sebastiao/gitops-argocd.git
+    targetRevision: main
+    path: argocd-image-updater/helm-manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated: {}
