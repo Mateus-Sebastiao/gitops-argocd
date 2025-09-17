@@ -5,10 +5,10 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: flask-hello-world=docker.io/mateussebastiao/flask_hello-world
-    argocd-image-updater.argoproj.io/flask_hello-world.update-strategy: latest
-    argocd-image-updater.argoproj.io/flask_hello-world.write-back-method: git:values
-    argocd-image-updater.argoproj.io/flask_hello-world.helm.image-name: image.repository
-    argocd-image-updater.argoproj.io/flask_hello-world.helm.image-tag: image.tag
+    argocd-image-updater.argoproj.io/flask-hello-world.update-strategy: latest
+    argocd-image-updater.argoproj.io/flask-hello-world.write-back-method: git:values
+    argocd-image-updater.argoproj.io/flask-hello-world.helm.image-name: image.repository
+    argocd-image-updater.argoproj.io/flask-hello-world.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/git-branch: main
 spec:
   project: default
