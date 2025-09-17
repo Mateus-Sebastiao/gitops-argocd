@@ -25,5 +25,5 @@ spec:
           {{- toYaml .Values.securityContext | nindent 14 }}
         ports:
         - containerPort: {{ .Values.image.containerPort }}
-          name: flask_hello-world
+          name: flask-hello-world
           protocol: TCP
