@@ -30,4 +30,4 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:latest
+#          docker push ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:latest
