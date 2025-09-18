@@ -6,11 +6,11 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: flask-hello-world=docker.io/mateussebastiao/flask_hello-world
     argocd-image-updater.argoproj.io/flask-hello-world.update-strategy: digest
-    argocd-image-updater.argoproj.io/flask-hello-world.write-back-method: git:secret:argocd/git-creds
+    argocd-image-updater.argoproj.io/flask-hello-world.write-back-method: git:values
     argocd-image-updater.argoproj.io/flask-hello-world.helm.image-name: image.repository
     argocd-image-updater.argoproj.io/flask-hello-world.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/flask-hello-world.allow-tags: regexp:^latest$
-    argocd-image-updater.argoproj.io/write-back-target: helmvalues:argocd-image-updater/helm-manifests/values.yaml
+    argocd-image-updater.argoproj.io/write-back-target: helmvalues:argocd-image-updater/helm-manifests/values.yaml,git:secret:argocd/git-creds
     argocd-image-updater.argoproj.io/git-branch: main
 spec:
   project: default
