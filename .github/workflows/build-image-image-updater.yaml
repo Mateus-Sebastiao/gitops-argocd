@@ -24,10 +24,15 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:${{ github.sha }} ./argocd-image-updater/app
-          docker tag ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:latest
+          VERSION="1.0.${{ github.run_number }}"
+          IMAGE=${{ secrets.DOCKER_USERNAME }}/flask_hello-world
+          docker build -t $IMAGE:$VERSION ./argocd-image-updater/app
+          docker tag $IMAGE:$VERSION $IMAGE:latest
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask_hello-world:latest
+          VERSION="1.0.${{ github.run_number }}"
+          IMAGE=${{ secrets.DOCKER_USERNAME }}/flask_hello-world
+          docker push $IMAGE:$VERSION
+          docker push $IMAGE:latest
+

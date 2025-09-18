@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: docker.io/mateussebastiao/flask_hello-world
-  tag: "latest"
+  tag: "v1.0.0"
   pullPolicy: IfNotPresent
   containerPort: 8080
 
