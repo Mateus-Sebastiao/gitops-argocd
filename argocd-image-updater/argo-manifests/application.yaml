@@ -7,8 +7,8 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: flask-hello-world=docker.io/mateussebastiao/flask_hello-world
     argocd-image-updater.argoproj.io/flask-hello-world.update-strategy: semver
     argocd-image-updater.argoproj.io/flask-hello-world.version: ">=1.0.0"
-    argocd-image-updater.argoproj.io/flask-hello-world.allow-tags: regexp:^v[0-9]+\.[0-9]+\.[0-9]+$
-    argocd-image-updater.argoproj.io/flask-hello-world.write-back-method: git:values
+    argocd-image-updater.argoproj.io/flask-hello-world.allow-tags: regexp:^[0-9]+\.[0-9]+\.[0-9]+$
+    argocd-image-updater.argoproj.io/flask-hello-world.write-back-method: git
     argocd-image-updater.argoproj.io/flask-hello-world.helm.image-name: image.repository
     argocd-image-updater.argoproj.io/flask-hello-world.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/write-back-target: helmvalues:argocd-image-updater/helm-manifests/values.yaml,git:secret:argocd/git-creds
