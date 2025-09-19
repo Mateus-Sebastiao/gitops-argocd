@@ -1,13 +1,10 @@
 replicaCount: 1
-
 image:
   repository: docker.io/mateussebastiao/flask_hello-world
-  tag: "1.0.12"
+  tag: "1.0.20"
   pullPolicy: IfNotPresent
   containerPort: 8080
-
 service:
   type: ClusterIP
   port: 80
-
 securityContext: {}
