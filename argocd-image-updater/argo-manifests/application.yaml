@@ -16,7 +16,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github:Mateus-Sebastiao/gitops-argocd
+    repoURL: git@github.com:Mateus-Sebastiao/gitops-argocd.git
     targetRevision: main
     path: argocd-image-updater/helm-manifests
   destination:
